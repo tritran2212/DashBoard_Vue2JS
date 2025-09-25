@@ -1,28 +1,56 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <NavbarBase />
+    <div class="app_content">
+      <div class="sidebar">
+        <SidebarApp class="Sidebar" />
+      </div>
+
+      <div class="content">
+
+        <ChartCard />
+        <div class="content_cardWidget" >
+          <CardWidget />
+          
+        </div>
+      </div>
+    </div>
+
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import NavbarBase from './components/NavbarBase.vue';
+import ChartCard from './components/ChartCard.vue';
+import SidebarApp from './components/SidebarApp.vue';
+import CardWidget from './components/CardWidget.vue';
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    NavbarBase,
+    ChartCard,
+    SidebarApp,
+    CardWidget
+  },
+  
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.app_content {
+  position: relative;
 }
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.content {
+  margin-left: 8rem;
+}
+ 
 </style>
