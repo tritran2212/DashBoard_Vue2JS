@@ -201,4 +201,25 @@ i {
   opacity: 0;
   transform: translateY(-6px) translateX(-50%);
 }
+
+@media only screen and (width<= 576px) {
+  .navbar_right {
+    display: none;
+  }
+}
+@media only screen and (width >=577px) and (width<= 1023px){
+  .navbar_right {
+    display: none;
+  }
+}
+@media only screen and (width>=1024px){
+  .navbar_right {
+    display: flex;
+    
+  }
+  .navbar{
+    width:100%;
+  }
+}
+
 </style>

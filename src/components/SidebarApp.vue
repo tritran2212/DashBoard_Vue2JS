@@ -1,5 +1,5 @@
 <template>
-   <div class="sidebar">
+   <div class="sidebar_">
   <div class="sidebar-header">
     <div class="logo">
     <img src="../assets/logo.png" :alt="Logo_View" class="logo-image" width="30" height="30"/>
@@ -59,15 +59,16 @@
     }
 </script>
 <style>
-.sidebar {
+.sidebar_ {
   height: 600px;
   width: 5rem; 
   background: #41B580;
   color: white;
   transition: width 0.5s ease;
   border-radius: 5px;
+  bottom: 0;
 }
-.sidebar:hover {
+.sidebar_:hover {
   width: 220px; 
 }
 .logo {
@@ -120,10 +121,26 @@
   font-size: 16px;
 }
 
-.sidebar:hover .text {
+.sidebar_ :hover .text {
  opacity: 1;
 }
 .sidebar-header{
     padding:15px 0 ;
+}
+
+@media only screen and (width<= 576px) {
+  .sidebar_  {
+    display: none;
+  }
+}
+@media only screen and (width >=577px) and (width<= 1023px) {
+  .sidebar_  {
+    display: none;
+  }
+}
+@media only screen and (width>=1024px) {
+ .sidebar_ {
+  display: block;
+ }
 }
 </style>

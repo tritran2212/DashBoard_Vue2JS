@@ -27,7 +27,6 @@
                     <div class="icon_number">
                         <p>Followers</p>
                         <h3>+45K</h3>
-                        
                     </div>
                 </div>
                 <p>Last Research</p>
@@ -84,21 +83,21 @@ import {PhChatCircleDots,PhStar,PhChatText,PhChatsTeardrop } from 'phosphor-vue'
                 type:String,
                 default:"New Messages"
             }
-        }
-
-        
-
-        
-        
+        }   
 
     }
 </script>
 
 <style>
+.card-item{
+    width:100%;
+    
+}
 .card_widget{
     width: 315px;
     height: 135px;
     background-color: #2a2a40;
+    padding-right: 0;
 }
 .card_widget>p{
     font-size: 13px;
@@ -141,10 +140,11 @@ import {PhChatCircleDots,PhStar,PhChatText,PhChatsTeardrop } from 'phosphor-vue'
     background-color:#FF7286 ;
     
 }
-.card-item{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 2rem;
+.card-item {
+  display: flex;
+  justify-content: space-between; 
+  margin-top: 2rem;
+  gap: 20px; 
 }
 .rounder-icon.icon1 {
   background-color: #FF7286; /* đỏ */
@@ -165,5 +165,48 @@ import {PhChatCircleDots,PhStar,PhChatText,PhChatsTeardrop } from 'phosphor-vue'
 .icon_number h3{
     font-size: 23px;
     font-weight: 300;
+}
+@media only screen and (width<= 576px) {
+  .card-item{
+    display:flex;
+    flex-direction:column;
+  }
+  .card_widget{
+    width: 546px;
+  
+}
+.card_widget>p::before{
+    content: "";
+    display:block;
+    width: 100%;
+    height: 1px;
+    background-color: #9a9a9a;
+    margin: 8px 0;   
+    
+}
+}
+@media only screen and (width >=577px) and (width<= 1023px) {
+     .card-item{
+        display:grid;
+       grid-template-columns: repeat(2,1fr);
+
+       
+  }
+   .card_widget{
+    width: 100%;
+  
+}
+
+}
+@media only screen and (width>=1024px) {
+     .card-item{
+      display: flex;
+      justify-content: space-between;
+      width:100%
+  }
+     .card_widget{
+    width: 100%;
+  
+}
 }
 </style>
