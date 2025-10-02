@@ -1,48 +1,34 @@
 <template>
   <div id="app">
     <NavbarBase />
-    <div class="app_content">
-      <div class="sidebar_menu">
-        <SidebarApp class="Sidebar" />
-      </div>
+      <div class="app_content">
 
-      <div class="content">
-
-        <ChartCard />
-        <div class="content_cardWidget">
-          <CardWidget />
+        <div class="sidebar_menu">
+          <SidebarApp class="Sidebar" />
         </div>
-        <ListChart />
-        <TaskList />
-        <GlobalSalesMap />
+
+        <div class="content">
+          <router-view></router-view>
+        </div>
         <FooterPage />
       </div>
-    </div>
 
+    
 
 
   </div>
 </template>
 
 <script>
+
 import NavbarBase from './components/NavbarBase.vue';
-import ChartCard from './components/ChartCard.vue';
 import SidebarApp from './components/SidebarApp.vue';
-import CardWidget from './components/CardWidget.vue';
-import ListChart from './components/ListChart.vue';
-import TaskList from './components/TaskList.vue';
-import GlobalSalesMap from './components/GlobalSalesMap.vue'
 import FooterPage from './components/Footer.vue';
 export default {
   name: 'App',
   components: {
     NavbarBase,
-    ChartCard,
     SidebarApp,
-    CardWidget,
-    ListChart,
-    TaskList,
-    GlobalSalesMap,
     FooterPage
   },
 
@@ -54,32 +40,34 @@ export default {
   position: relative;
 }
 
-.sidebar_menu{
+.sidebar_menu {
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   z-index: 100;
 }
 
-.Sidebar{
-  position:fixed
+.Sidebar {
+  position: fixed
 }
 
 .content {
   margin-left: 8rem;
 }
 
-@media only screen and (width<= 576px)  {
+@media only screen and (max-width: 576px) {
   .content {
     margin-left: 0;
   }
 }
-@media only screen and (width >=577px) and (width<= 1023px) {
+
+@media only screen and (min-width: 577px) and (max-width: 1023px) {
   .content {
     margin-left: 0;
   }
 }
-@media only screen and (width>=1024px) {
+
+@media only screen and (min-width: 1024px) {
   .content {
     margin-left: 8rem;
   }

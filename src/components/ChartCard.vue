@@ -1,24 +1,36 @@
 <template>
-  <div class="chart-container">
+  <div
+    class="mt-20 bg-[#2a2a40] p-[30px] rounded-none h-[365px] flex flex-col w-full sm:p-0 md:p-0 lg:p-0 xl:p-0"
+  >
 
-    <div class="tabs">
+    <div class="flex justify-between mb-4">
+      <!-- Title -->
       <div class="title-performance">
-
-        <h5>Total shipments</h5>
-        <h2>Performance</h2>
-
+        <h5 class="m-0 text-[#9A9A9A] text-[12px] font-light">Total shipments</h5>
+        <h2 class="m-0 text-white font-thin">Performance</h2>
       </div>
 
+    
       <div class="title-button">
-        <button v-for="tab in tabs" :key="tab" :class="{ active: activeTab === tab }" @click="activeTab = tab">
+        <button
+          v-for="tab in tabs"
+          :key="tab"
+          @click="activeTab = tab"
+          :class="[
+            'cursor-pointer px-[14px] py-[4px] bg-[#2a2a40] border border-[#d725bb]',
+            activeTab === tab
+              ? 'bg-[#d725bb] text-white'
+              : 'text-[#d725bb]'
+          ]"
+        >
           {{ tab }}
         </button>
       </div>
     </div>
 
-    <!-- Chart -->
-    <div class="chart-wrapper">
-      <line-chart :data="chartData" :options="chartOptions" id="line-chart" />
+ 
+    <div class="relative">
+      <line-chart :data="chartData" :options="chartOptions" id="line-chart" class="!h-[300px]" />
     </div>
   </div>
 </template>
@@ -64,7 +76,9 @@ export default {
       };
 
       return {
-        labels: ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"],
+        labels: [
+          "JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"
+        ],
         datasets: [
           {
             label: this.activeTab,
@@ -81,78 +95,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.chart-container {
-  background: #2a2a40;
-  padding: 1rem;
-  border-radius: 0;
-  height: 365px;
-  display: flex;
-  flex-direction: column;
-}
-
-.tabs {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-
-}
-
-.tabs button {
-  color: #bbb;
-  cursor: pointer;
-  padding: 4px 14px;
-  background-color: #2a2a40;
-  color: #d725bb;
-  border-color: #d725bb;
-}
-
-.tabs button.active {
-  background: #d725bb;
-  color: #fff;
-}
-
-.chart-wrapper {
-  position: relative;
-}
-
-.title-performance h2 {
-  margin: 0;
-  color: white;
-  font-weight: 100;
-}
-
-.title-performance h5 {
-  margin: 0;
-  color: white;
-  font-size: 12px;
-  color: #9A9A9A;
-  font-weight: 300;
-}
-
-#line-chart {
-  height: 300px !important;
-}
-
-@media only screen and (width<= 576px) {
-  .chart-container {
-    width: 100%;
-    padding: 0
-    ;
-  }
-}
-@media only screen and (width >=577px) and (width<= 1023px)  {
-  .chart-container {
-    width: 100%;
-    padding: 0
-    ;
-  }
-}
-@media only screen and (width>=1024px){
-  .chart-container {
-    width: 100%;
-    padding: 0;
-  }
-}
-</style>

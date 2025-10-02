@@ -1,62 +1,62 @@
 <template>
-  <div class="dashboard">
-   
-    <div class="chart-card">
-      <div class="card-header">
-        <h2>Total Shipments</h2>
-        <h5>763,215</h5>
+  <div class="mt-8 flex flex-wrap gap-5">
+    
+    <div class="bg-[#2a2a40] rounded-xl p-4 flex-1 min-w-[300px] h-[330px] box-border">
+      <div class="mb-2">
+        <h2 class="text-[10px] text-gray-400 m-0 font-thin">Total Shipments</h2>
+        <h5 class="text-[23px] mt-1 mb-0 font-light text-white">763,215</h5>
       </div>
-      <chart-line :data="shipmentsData" :options="chartOptions"  id="chart_"/>
+      <chart-line :data="shipmentsData" :options="chartOptions" class="h-[80%]" />
     </div>
 
-  
-    <div class="chart-card">
-      <div class="card-header">
-        <h2>Daily Sales</h2>
-        <h5>3,500€</h5>
+    
+    <div class="bg-[#2a2a40] rounded-xl p-4 flex-1 min-w-[300px] h-[330px] box-border">
+      <div class="mb-2">
+        <h2 class="text-[10px] text-gray-400 m-0 font-thin">Daily Sales</h2>
+        <h5 class="text-[23px] mt-1 mb-0 font-light text-white">3,500€</h5>
       </div>
-      <chart-bar :data="salesData" :options="chartOptions" id="chart_" />
+      <chart-bar :data="salesData" :options="chartOptions" class="h-[80%]" />
     </div>
 
-   
-    <div class="chart-card">
-      <div class="card-header">
-        <h2>Completed Tasks</h2>
-        <h5>12,100K</h5>
+    
+    <div class="bg-[#2a2a40] rounded-xl p-4 flex-1 min-w-[300px] h-[330px] box-border">
+      <div class="mb-2">
+        <h2 class="text-[10px] text-gray-400 m-0 font-thin">Completed Tasks</h2>
+        <h5 class="text-[23px] mt-1 mb-0 font-light text-white">12,100K</h5>
       </div>
-      <chart-line :data="tasksData" :options="chartOptions" id="chart_" />
+      <chart-line :data="tasksData" :options="chartOptions" class="h-[80%]" />
     </div>
   </div>
 </template>
 
 <script>
-
 import { Line, Bar } from "vue-chartjs";
 
 const ChartLine = {
-    extends:Line,
-    props:["data","options"],
-    mounted(){
-      this.renderChart(this.data,this.options);
-    },
-    watch:{
-      data(newData){
-        this.renderChart(newData,this.options)
-      }
-    }
-}
-const  ChartBar = {
-   extends:Bar,
-   props:["data","options"],
-   mounted(){
+  extends: Line,
+  props: ["data", "options"],
+  mounted() {
     this.renderChart(this.data, this.options);
-   },
-   watch:{
-     data(newData){
-      this.renderChart(newData,this.options);
-     }
-   }
-}
+  },
+  watch: {
+    data(newData) {
+      this.renderChart(newData, this.options);
+    }
+  }
+};
+
+const ChartBar = {
+  extends: Bar,
+  props: ["data", "options"],
+  mounted() {
+    this.renderChart(this.data, this.options);
+  },
+  watch: {
+    data(newData) {
+      this.renderChart(newData, this.options);
+    }
+  }
+};
 
 export default {
   name: "DashboardPage",
@@ -66,22 +66,10 @@ export default {
       chartOptions: {
         responsive: true,
         maintainAspectRatio: false,
-            legend: { 
-                display: false
-            } 
-        ,
+        plugins: { legend: { display: false } },
         scales: {
-          x: {
-             grid: 
-             { 
-                color: "rgba(255,255,255,0.1)" 
-            } 
-            },
-          y: {
-             grid: { 
-                color: "rgba(255,255,255,0.1)" 
-            } 
-            }
+          x: { grid: { color: "rgba(255,255,255,0.1)" } },
+          y: { grid: { color: "rgba(255,255,255,0.1)" } }
         }
       }
     };
@@ -103,20 +91,20 @@ export default {
         ]
       };
     },
-        salesData() {
-    return {
+    salesData() {
+      return {
         labels: ["USA", "GER", "AUS", "UK", "RO", "BR"],
         datasets: [
-        {
+          {
             label: "Sales",
-            data: [50, 20, 50, 80, 100, 45 ,40],
-            backgroundColor: "transparent", 
-            borderColor: "#1B8BF8",         
-            borderWidth: 2,                  
+            data: [50, 20, 50, 80, 100, 45, 40],
+            backgroundColor: "transparent",
+            borderColor: "#1B8BF8",
+            borderWidth: 2,
             borderRadius: 5
-        }
+          }
         ]
-    };
+      };
     },
     tasksData() {
       return {
@@ -139,59 +127,5 @@ export default {
 </script>
 
 <style scoped>
-.dashboard {
-  margin-top:2rem;
-  display: flex;
-  gap: 20px;
-}
-.chart-card {
-  background: #2a2a40;
-  border-radius: 10px;
-  padding: 15px;
-  flex: 1;
-  height: 330px;
-  display: flex;
-  flex-direction: column;
-}
-.card-header {
-  margin-bottom: 10px;
-}
-.card-header h2 {
-  font-size: 10px;
-   color:#9A9A9A;
-  margin: 0;
-font-weight: 100
-}
-.card-header h5 {
-  font-size: 23px;
- 
-  margin: 5px 0 0 0;
- font-weight: 300;
- color: white;
-}
-#chart_{
-    height: 280px!important;
-}
-@media only screen and (width<= 576px){
-  .dashboard {
-    display: block;
 
-  }
-}
-
-@media only screen and (width >=577px) and (width<= 1023px)  {
-  .dashboard {
-    display: block
-  
-  }
-  .chart-card{
-    margin-top: 20px;
-  }
-}
-@media only screen and (width>=1024px)  {
-  .dashboard {
-    display: flex;
-   
-  }
-}
 </style>

@@ -1,146 +1,170 @@
 <template>
-   <div class="sidebar_">
-  <div class="sidebar-header">
-    <div class="logo">
-    <img src="../assets/logo.png" :alt="Logo_View" class="logo-image" width="30" height="30"/>
-  </div>
-  </div>
-  <ul class="menu">
-    <li>
-      <i class="fa-solid fa-globe icon"></i>
-      <div class="text">Dashboard</div>
-    </li>
-    <li>
-      <i class="fa-solid fa-camera icon"></i>
-      <div class="text">Pages</div>
-    </li>
-    <li>
-    <i class="fa-brands fa-web-awesome icon"></i>
-      <div class="text">Components</div>
-    </li>
-    <li>
-     <i class="fa-solid fa-heading icon"></i>
-      <div class="text">Forms</div>
-    </li>
-    <li>
-      <i class="fa-solid fa-envelope-open-text icon"></i>
-      <div class="text">Tables</div>
-    </li>
-    <li>
-      <i class="fa-solid fa-location-dot icon"></i>
-      <div class="text">Maps</div>
-    </li>
-    <li>
-      <i class="fa-solid fa-gear  icon"></i>
-      <div class="text">Widgets</div>
-    </li>
-    <li>
-      <i class="fa-solid fa-chart-simple icon"></i>
-      <div class="text">Charts</div>
-    </li>
-    <li>
-      <i class="fa-solid fa-clock icon"></i>
-      <div class="text">Calendar</div>
-    </li>
-  </ul>
-</div>
+  <div
+    class="group h-[650px] w-20 hover:w-56 bg-[#41B580] text-white transition-all duration-500 rounded-md overflow-hidden hidden lg:block">
+    <!-- Header -->
+    <div class="p-4 flex justify-center">
+      <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+        <img src="../assets/logo.png" :alt="Logo_View" class="w-7 h-7" />
+      </div>
+    </div>
 
+
+    <ul class="list-none p-0 m-0">
+
+      <li class="flex items-center gap-2 px-4 py-3 hover:bg-white/20 border-t border-gray-400 cursor-pointer">
+        <i class="fa-solid fa-globe text-gray-300 text-lg w-8 flex-shrink-0 text-center"></i>
+        <router-link to="/"
+          class="text-xs whitespace-nowrap overflow-hidden max-w-0 group-hover:max-w-[150px] transition-all duration-500">
+          Dashboard
+        </router-link>
+      </li>
+
+
+      <li class="px-4 py-3 hover:bg-white/20 cursor-pointer">
+        <div class="flex items-center justify-between" @click="isOpenMenuSidebar">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-camera text-gray-300 text-lg w-8 flex-shrink-0 text-center"></i>
+            <span
+              class="text-xs whitespace-nowrap overflow-hidden max-w-0 group-hover:max-w-[150px] transition-all duration-500">
+              Pages
+            </span>
+          </div>
+          <div
+            class="w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-t-[4px] border-t-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-2">
+          </div>
+        </div>
+
+
+        <ul v-if="isOpen" class="pl-8 mt-2">
+          <li>
+            <router-link to="/detail" class="hidden group-hover:inline-block text-xs">
+              PagesDetail
+            </router-link>
+            <router-link to="/detail" class="inline-block group-hover:hidden text-xs">
+              P
+            </router-link>
+          </li>
+        </ul>
+      </li>
+      <li class="px-4 py-3 hover:bg-white/20 cursor-pointer">
+        <div class="flex items-center justify-between" @click="isOpenSideBarComponent">
+          <div class="flex items-center gap-2">
+            <i class="fa-brands fa-web-awesome text-gray-300 text-lg w-8 flex-shrink-0 text-center"></i>
+            <span
+              class="text-xs whitespace-nowrap overflow-hidden max-w-0 group-hover:max-w-[150px] transition-all duration-500">
+              Components
+            </span>
+          </div>
+          <div
+            class="w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-t-[4px] border-t-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-2">
+          </div>
+        </div>
+
+
+        <ul v-if=" isOpenComponent" class="pl-8 mt-2">
+          <li>
+            <router-link to="/detail" class="hidden group-hover:inline-block text-xs">
+             ComponentsDetail
+            </router-link>
+            <router-link to="/detail" class="inline-block group-hover:hidden text-xs">
+              C
+            </router-link>
+          </li>
+        </ul>
+      </li>
+
+      <li class="px-4 py-3 hover:bg-white/20 cursor-pointer">
+        <div class="flex items-center justify-between" @click="isOpenSideBarForms">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-heading text-gray-300 text-lg w-8 flex-shrink-0 text-center"></i>
+            <span
+              class="text-xs whitespace-nowrap overflow-hidden max-w-0 group-hover:max-w-[150px] transition-all duration-500">
+              Forms
+            </span>
+          </div>
+          <div
+            class="w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-t-[4px] border-t-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-2">
+          </div>
+        </div>
+
+
+        <ul v-if=" isOpentForm" class="pl-8 mt-2">
+          <li>
+            <router-link to="/detail" class="hidden group-hover:inline-block text-xs">
+            FormsDetail
+            </router-link>
+            <router-link to="/detail" class="inline-block group-hover:hidden text-xs">
+              F
+            </router-link>
+          </li>
+        </ul>
+      </li>
+
+
+
+      
+
+
+      <li class="flex items-center gap-2 px-4 py-3 hover:bg-white/20 cursor-pointer">
+        <i class="fa-solid fa-envelope-open-text text-gray-300 text-lg w-8 flex-shrink-0 text-center"></i>
+        <span
+          class="text-xs whitespace-nowrap overflow-hidden max-w-0 group-hover:max-w-[150px] transition-all duration-500">
+          Tables
+        </span>
+      </li>
+
+
+      <li class="flex items-center gap-2 px-4 py-3 hover:bg-white/20 cursor-pointer">
+        <i class="fa-solid fa-location-dot text-gray-300 text-lg w-8 flex-shrink-0 text-center"></i>
+        <span
+          class="text-xs whitespace-nowrap overflow-hidden max-w-0 group-hover:max-w-[150px] transition-all duration-500">
+          Maps
+        </span>
+      </li>
+
+
+      <li class="flex items-center gap-2 px-4 py-3 hover:bg-white/20 cursor-pointer">
+        <i class="fa-solid fa-gear text-gray-300 text-lg w-8 flex-shrink-0 text-center"></i>
+        <span
+          class="text-xs whitespace-nowrap overflow-hidden max-w-0 group-hover:max-w-[150px] transition-all duration-500">
+          Widgets
+        </span>
+      </li>
+
+
+      <li class="flex items-center gap-2 px-4 py-3 hover:bg-white/20 cursor-pointer">
+        <i class="fa-solid fa-chart-simple text-gray-300 text-lg w-8 flex-shrink-0 text-center"></i>
+        <span
+          class="text-xs whitespace-nowrap overflow-hidden max-w-0 group-hover:max-w-[150px] transition-all duration-500">
+          Charts
+        </span>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
-    export default{
-        name: "SidebarApp",
-        data(){
-            return{
-                Logo_View: "Logo_VUE"
-            }
-        }
-
+export default {
+  name: "SidebarApp",
+  data() {
+    return {
+      Logo_View: "Logo_VUE",
+      isOpen: false,
+      isOpenComponent:false,
+      isOpentForm:false,
+    };
+  },
+  methods: {
+    isOpenMenuSidebar() {
+      this.isOpen = !this.isOpen;
+    },
+    isOpenSideBarComponent(){
+      this.isOpenComponent=!this.isOpenComponent;
+    },
+    isOpenSideBarForms(){
+      this. isOpentForm=!this. isOpentForm;
     }
+
+  },
+};
 </script>
-<style>
-.sidebar_ {
-  height: 600px;
-  width: 5rem; 
-  background: #41B580;
-  color: white;
-  transition: width 0.5s ease;
-  border-radius: 5px;
-  bottom: 0;
-}
-.sidebar_:hover {
-  width: 220px; 
-}
-.logo {
-    width:2.5rem ;
-    height:2.5rem;
-    border-radius: 50%;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top:30px;
-    margin-left: 10px;
-    margin-top: 20px; 
-}
-
-.menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  
-}
-.menu li:first-child{
-  border-top:1px solid #A9A9A9;
-}
-
-.menu li {
-  padding: 12px 15px;
-  cursor: pointer;
-  transition: background 0.2s;
-  font-weight: 100;
-  color:A9A9A9
-}
-
-.menu li:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-.icon {
-  font-size: 20px;
-  width: 30px;
-  text-align: center;
-  color: #A9A9A9;
-  margin-right: 10px;
-  float: left;
-}
-.text {
-  opacity: 0;
-  white-space: nowrap;
-  margin: 0;
-  transition: opacity 0.4s ease;
-  font-size: 16px;
-}
-
-.sidebar_ :hover .text {
- opacity: 1;
-}
-.sidebar-header{
-    padding:15px 0 ;
-}
-
-@media only screen and (width<= 576px) {
-  .sidebar_  {
-    display: none;
-  }
-}
-@media only screen and (width >=577px) and (width<= 1023px) {
-  .sidebar_  {
-    display: none;
-  }
-}
-@media only screen and (width>=1024px) {
- .sidebar_ {
-  display: block;
- }
-}
-</style>
