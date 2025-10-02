@@ -102,7 +102,13 @@
 
 
 
-      
+      <li class="flex items-center gap-2 px-4 py-3 hover:bg-white/20 cursor-pointer">
+        <i class="fa-solid fa-heading text-gray-300 text-lg w-8 flex-shrink-0 text-center"></i>
+        <span
+          class="text-xs whitespace-nowrap overflow-hidden max-w-0 group-hover:max-w-[150px] transition-all duration-500">
+          Forms
+        </span>
+      </li>
 
 
       <li class="flex items-center gap-2 px-4 py-3 hover:bg-white/20 cursor-pointer">
