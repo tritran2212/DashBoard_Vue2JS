@@ -66,7 +66,7 @@ export default {
       chartOptions: {
         responsive: true,
         maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
+         legend: { display: false } ,
         scales: {
           x: { grid: { color: "rgba(255,255,255,0.1)" } },
           y: { grid: { color: "rgba(255,255,255,0.1)" } }

@@ -61,9 +61,7 @@ export default {
       chartOptions: {
         responsive: true,
         maintainAspectRatio: false,
-        legend: {
-          display: false
-        }
+        legend: { display: false } ,
       }
     };
   },
