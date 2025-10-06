@@ -154,39 +154,34 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import "../assets/scss/_mixin";
+@import "../assets/scss/_variables";
 .dashboard {
-  display: flex;
+  @include flex(space-between,stretch);
   gap: 20px;
   width: 100%;
   padding-top: 20px;
-  background: #1a1a2e;
-  color: #fff;
-  align-items: stretch;
+  background: $color-bg-main;
+  color: $color-text;
   .tasks,
   .management {
-    flex: 1;
-    background: #2a2a40;
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
+    @include card-style
   }
   /* ----- TASKS SECTION ----- */
   .tasks {
     .tasks-header {
-      display: flex;
-      justify-content: space-between;
+      @include flex(space-between,center);
       margin-bottom: 20px;
       .task_text {
         display: flex;
         h2 {
-          font-size: 12px;
+          font-size:  $font-small;
           margin-right: 20px;
           font-weight: 400;
         }
         h3 {
-          font-size: 12px;
-          color: #9a9a9a;
+          font-size: $font-small;
+          color: $color-muted;
           font-weight: 100;
         }
       }
@@ -196,8 +191,7 @@ export default {
       padding: 0;
       margin: 0;
       .task-item {
-        display: flex;
-        justify-content: space-between;
+        @include flex(space-between, flex-start);
         align-items: flex-start;
         border-bottom: 1px solid #96aaaa;
         padding: 10px 0;
@@ -231,7 +225,7 @@ export default {
   /* ----- MANAGEMENT SECTION ----- */
   .management {
     h2 {
-      font-size: 14px;
+      font-size: $font-normal;
       color: #9a9a9a;
       font-weight: 100;
       margin-bottom: 10px;
@@ -239,9 +233,9 @@ export default {
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 12px;
+      font-size: $font-small;
       th {
-        font-size: 12px;
+        font-size: font-small;
         font-weight: 700;
         text-align: left;
         padding-bottom: 8px;
@@ -252,8 +246,7 @@ export default {
           td {
             padding: 8px 4px;
             &.user-cell {
-              display: flex;
-              align-items: center;
+               @include flex(flex-start, center);
               gap: 10px;
               img {
                 width: 30px;
@@ -275,7 +268,7 @@ export default {
                 height: 8px;
                 overflow: hidden;
                 .progress-fill {
-                  background: #344675;
+                  background: $color-primary;
                   height: 100%;
                   border-radius: 10px;
                 }
@@ -290,10 +283,10 @@ export default {
                 cursor: pointer;
 
                 &.refresh {
-                  color: #4caf50;
+                  color: $color-refesh;
                 }
                 &.close {
-                  color: #f44336;
+                  color: $color-render;
                 }
               }
             }
@@ -302,7 +295,6 @@ export default {
       }
     }
   }
-
   /* ----- CUSTOM SCROLLBAR ----- */
   .scroll-container {
     flex: 1;

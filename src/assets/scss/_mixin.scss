@@ -17,3 +17,12 @@
     }
   }
 }
+
+@mixin card-style {
+  background: $color-bg-card;
+  padding: 20px;
+  border-radius: $radius;
+  display: flex;
+  flex-direction: column;
+  flex:1
+}
