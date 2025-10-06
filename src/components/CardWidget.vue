@@ -9,17 +9,17 @@
                 </div>
                 <div class="icon_number text-right">
                     <p class="text-xs text-[#9a9a9a] m-0">Number</p>
-                    <h3 class="text-white text-[23px] font-light m-0">150GB</h3>
+                    <h3 class="text-white text-2xl font-light m-0">150GB</h3>
                 </div>
             </div>
-            <p class="text-[13px] text-[#9a9a9a] ml-4 relative 
+            <p class="text-sm text-[#9a9a9a] ml-4 relative 
             before:content-[''] before:block 
             before:w-[90%] before:h-[1px] 
             before:bg-[#9a9a9a]/40 before:my-2">
                 Update Now
             </p>
         </div>
-        <div class="card_widget bg-[#2a2a40] w-[315px] h-[135px] sm:w-full">
+        <div class="card_widget bg-[#2a2a40] w-80 h-[135px] sm:w-full">
             <div class="card-icon flex justify-between p-4">
                 <div class="rounder-icon w-12 h-12 flex items-center justify-center rounded-full bg-[#B45CFF]">
                     <PhStar color="#f2eded" />
@@ -43,7 +43,7 @@
                 </div>
                 <div class="icon_number text-right">
                     <p class="text-xs text-[#9a9a9a] m-0">Users</p>
-                    <h3 class="text-white text-[23px] font-light m-0">150,000</h3>
+                    <h3 class="text-white text-2xl font-light m-0">150,000</h3>
                 </div>
             </div>
             <p class="text-[13px] text-[#9a9a9a] ml-4 relative 

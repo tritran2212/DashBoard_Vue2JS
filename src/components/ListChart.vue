@@ -1,26 +1,26 @@
 <template>
   <div class="mt-8 flex flex-wrap gap-5">
     
-    <div class="bg-[#2a2a40] rounded-xl p-4 flex-1 min-w-[300px] h-[330px] box-border">
+    <div class="bg-[#2a2a40] rounded-xl p-4 flex-1 min-w-75  h-[330px] box-border">
       <div class="mb-2">
         <h2 class="text-[10px] text-gray-400 m-0 font-thin">Total Shipments</h2>
-        <h5 class="text-[23px] mt-1 mb-0 font-light text-white">763,215</h5>
+        <h5 class="text-2xl mt-1 mb-0 font-light text-white">763,215</h5>
       </div>
       <chart-line :data="shipmentsData" :options="chartOptions" class="h-[80%]" />
     </div>
 
     
-    <div class="bg-[#2a2a40] rounded-xl p-4 flex-1 min-w-[300px] h-[330px] box-border">
+    <div class="bg-[#2a2a40] rounded-xl p-4 flex-1 min-w-75 h-[330px] box-border">
       <div class="mb-2">
         <h2 class="text-[10px] text-gray-400 m-0 font-thin">Daily Sales</h2>
-        <h5 class="text-[23px] mt-1 mb-0 font-light text-white">3,500€</h5>
+        <h5 class="text-2xl mt-1 mb-0 font-light text-white">3,500€</h5>
       </div>
       <chart-bar :data="salesData" :options="chartOptions" class="h-[80%]" />
     </div>
-    <div class="bg-[#2a2a40] rounded-xl p-4 flex-1 min-w-[300px] h-[330px] box-border">
+    <div class="bg-[#2a2a40] rounded-xl p-4 flex-1 min-w-75 h-[330px] box-border">
       <div class="mb-2">
         <h2 class="text-[10px] text-gray-400 m-0 font-thin">Completed Tasks</h2>
-        <h5 class="text-[23px] mt-1 mb-0 font-light text-white">12,100K</h5>
+        <h5 class="text-2xl mt-1 mb-0 font-light text-white">12,100K</h5>
       </div>
       <chart-line :data="tasksData" :options="chartOptions" class="h-[80%]" />
     </div>

@@ -281,7 +281,6 @@ export default {
                 background: none;
                 border: none;
                 cursor: pointer;
-
                 &.refresh {
                   color: $color-refesh;
                 }

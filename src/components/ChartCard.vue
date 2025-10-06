@@ -1,12 +1,12 @@
 <template>
   <div
-    class="mt-20 bg-[#2a2a40] p-[30px] rounded-none h-[365px] flex flex-col w-full sm:p-0 md:p-0 lg:p-0 xl:p-0"
+    class="mt-20 bg-[#2a2a40] p-7.5 rounded-none h-90 flex flex-col w-full sm:p-0 md:p-0 lg:p-0 xl:p-0"
   >
     <div class="flex justify-between mb-4">
       <!-- Title -->
       <div class="title-performance">
-        <h5 class="m-0 text-[#9A9A9A] text-[12px] font-light">Total shipments</h5>
-        <h2 class="m-0 text-white font-thin">Performance</h2>
+        <h5 class="m-0 text-[#9A9A9A] text-xs font-light">Total shipments</h5>
+        <h2 class="m-0 text-white font-thin ">Performance</h2>
       </div>   
       <div class="title-button">
         <button
@@ -14,7 +14,7 @@
           :key="tab"
           @click="activeTab = tab"
           :class="[
-            'cursor-pointer px-[14px] py-[4px] bg-[#2a2a40] border border-[#d725bb]',
+            'cursor-pointer px-3.5 py-1 bg-[#2a2a40] border border-[#d725bb]',
             activeTab === tab
               ? 'bg-[#d725bb] text-white'
               : 'text-[#d725bb]'
@@ -25,7 +25,7 @@
       </div>
     </div>
     <div class="relative">
-      <line-chart :data="chartData" :options="chartOptions" id="line-chart" class="!h-[300px]" />
+      <line-chart :data="chartData" :options="chartOptions" id="line-chart" class="!h-75" />
     </div>
   </div>
 </template>
