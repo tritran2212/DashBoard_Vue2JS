@@ -7,10 +7,7 @@
         <img src="../assets/logo.png" :alt="Logo_View" class="w-7 h-7" />
       </div>
     </div>
-
-
     <ul class="list-none p-0 m-0">
-
       <li class="flex items-center gap-2 px-4 py-3 hover:bg-white/20 border-t border-gray-400 cursor-pointer">
         <i class="fa-solid fa-globe text-gray-300 text-lg w-8 flex-shrink-0 text-center"></i>
         <router-link to="/"
@@ -18,8 +15,6 @@
           Dashboard
         </router-link>
       </li>
-
-
       <li class="px-4 py-3 hover:bg-white/20 cursor-pointer">
         <div class="flex items-center justify-between" @click="isOpenMenuSidebar">
           <div class="flex items-center gap-2">
@@ -33,8 +28,6 @@
             class="w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-t-[4px] border-t-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-2">
           </div>
         </div>
-
-
         <ul v-if="isOpen" class="pl-8 mt-2">
           <li>
             <router-link to="/detail" class="hidden group-hover:inline-block text-xs">
@@ -59,8 +52,6 @@
             class="w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-t-[4px] border-t-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-2">
           </div>
         </div>
-
-
         <ul v-if=" isOpenComponent" class="pl-8 mt-2">
           <li>
             <router-link to="/detail" class="hidden group-hover:inline-block text-xs">
@@ -72,7 +63,6 @@
           </li>
         </ul>
       </li>
-
       <li class="px-4 py-3 hover:bg-white/20 cursor-pointer">
         <div class="flex items-center justify-between" @click="isOpenSideBarForms">
           <div class="flex items-center gap-2">
@@ -86,8 +76,6 @@
             class="w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-t-[4px] border-t-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-2">
           </div>
         </div>
-
-
         <ul v-if=" isOpentForm" class="pl-8 mt-2">
           <li>
             <router-link to="/detail" class="hidden group-hover:inline-block text-xs">
@@ -99,9 +87,6 @@
           </li>
         </ul>
       </li>
-
-
-
       <li class="flex items-center gap-2 px-4 py-3 hover:bg-white/20 cursor-pointer">
         <i class="fa-solid fa-heading text-gray-300 text-lg w-8 flex-shrink-0 text-center"></i>
         <span
@@ -109,8 +94,6 @@
           Forms
         </span>
       </li>
-
-
       <li class="flex items-center gap-2 px-4 py-3 hover:bg-white/20 cursor-pointer">
         <i class="fa-solid fa-envelope-open-text text-gray-300 text-lg w-8 flex-shrink-0 text-center"></i>
         <span
@@ -118,8 +101,6 @@
           Tables
         </span>
       </li>
-
-
       <li class="flex items-center gap-2 px-4 py-3 hover:bg-white/20 cursor-pointer">
         <i class="fa-solid fa-location-dot text-gray-300 text-lg w-8 flex-shrink-0 text-center"></i>
         <span
@@ -127,8 +108,6 @@
           Maps
         </span>
       </li>
-
-
       <li class="flex items-center gap-2 px-4 py-3 hover:bg-white/20 cursor-pointer">
         <i class="fa-solid fa-gear text-gray-300 text-lg w-8 flex-shrink-0 text-center"></i>
         <span
@@ -136,8 +115,6 @@
           Widgets
         </span>
       </li>
-
-
       <li class="flex items-center gap-2 px-4 py-3 hover:bg-white/20 cursor-pointer">
         <i class="fa-solid fa-chart-simple text-gray-300 text-lg w-8 flex-shrink-0 text-center"></i>
         <span
@@ -148,7 +125,6 @@
     </ul>
   </div>
 </template>
-
 <script>
 export default {
   name: "SidebarApp",

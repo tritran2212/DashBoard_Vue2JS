@@ -1,0 +1,19 @@
+
+@mixin flex($justify:center, $align:center){
+    display: flex;
+    justify-content: $justify;
+    align-items:$align;
+}
+
+@mixin custom-scrollbar{
+    &::-webkit-scrollbar{
+        width:6px;
+    }
+    &::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 10px;
+    &:hover {
+      background: #888;
+    }
+  }
+}

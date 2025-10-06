@@ -17,8 +17,6 @@
       </div>
       <chart-bar :data="salesData" :options="chartOptions" class="h-[80%]" />
     </div>
-
-    
     <div class="bg-[#2a2a40] rounded-xl p-4 flex-1 min-w-[300px] h-[330px] box-border">
       <div class="mb-2">
         <h2 class="text-[10px] text-gray-400 m-0 font-thin">Completed Tasks</h2>

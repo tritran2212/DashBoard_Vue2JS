@@ -19,8 +19,6 @@
                 Update Now
             </p>
         </div>
-
-
         <div class="card_widget bg-[#2a2a40] w-[315px] h-[135px] sm:w-full">
             <div class="card-icon flex justify-between p-4">
                 <div class="rounder-icon w-12 h-12 flex items-center justify-center rounded-full bg-[#B45CFF]">
@@ -38,8 +36,6 @@
                     Last Research
                 </p>
         </div>
-
-
         <div class="card_widget bg-[#2a2a40] w-[315px] h-[135px] sm:w-full">
             <div class="card-icon flex justify-between p-4">
                 <div class="rounder-icon w-12 h-12 flex items-center justify-center rounded-full bg-[#0A84FF]">
@@ -57,7 +53,6 @@
                 Customer feedback
             </p>
         </div>
-
         <!-- Card 4 -->
         <div class="card_widget bg-[#2a2a40] w-[315px] h-[135px] sm:w-full">
             <div class="card-icon flex justify-between p-4">
